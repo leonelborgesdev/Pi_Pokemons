@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPokemons } from "../../redux/action";
 import { Card } from "../Card/Card";
+import "./Pokemons.css";
 
 export const Pokemons = () => {
   const dispatch = useDispatch();
@@ -14,13 +15,15 @@ export const Pokemons = () => {
   return (
     <div>
       <h1>Pokemons</h1>
-      {pokemons.length > 0 ? (
-        pokemons.map((pokemon) => {
-          return <Card pokemon={pokemon} />;
-        })
-      ) : (
-        <span>No se encontro Pokemons</span>
-      )}
+      <div className="cards_pokemons">
+        {pokemons.length > 0 ? (
+          pokemons.map((pokemon) => {
+            return <Card pokemon={pokemon} />;
+          })
+        ) : (
+          <span>No se encontro Pokemons</span>
+        )}
+      </div>
     </div>
   );
 };
