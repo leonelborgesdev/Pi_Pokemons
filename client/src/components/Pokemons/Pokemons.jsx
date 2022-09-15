@@ -18,7 +18,7 @@ export const Pokemons = () => {
       <div className="cards_pokemons">
         {pokemons.length > 0 ? (
           pokemons.map((pokemon) => {
-            return <Card pokemon={pokemon} />;
+            return <Card pokemon={pokemon} key={pokemon.id} />;
           })
         ) : (
           <span>No se encontro Pokemons</span>

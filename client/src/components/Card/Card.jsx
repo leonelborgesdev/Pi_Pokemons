@@ -2,7 +2,6 @@ import React from "react";
 import "./Card.css";
 
 export const Card = ({ pokemon }) => {
-  console.log(pokemon);
   return (
     <div className="card_pokemons">
       <div className="card_img">
