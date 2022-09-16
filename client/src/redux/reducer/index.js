@@ -2,6 +2,7 @@ import { GET_ALL_POKEMONS } from "../action/type";
 
 const initialState = {
   pokemons: [],
+  theme: "red",
 };
 
 const rootReducer = (state = initialState, action) => {
