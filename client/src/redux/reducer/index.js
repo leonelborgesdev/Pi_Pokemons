@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS } from "../action/type";
+import { CHANGE_IMG_LANDING, GET_ALL_POKEMONS } from "../action/type";
 
 const initialState = {
   pokemons: [],
@@ -11,6 +11,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         pokemons: action.payload,
+      };
+    case CHANGE_IMG_LANDING:
+      return {
+        ...state,
+        theme: payload,
       };
     default:
       return {
