@@ -21,16 +21,19 @@ export const Landing = () => {
             {theme === "red" ? (
               <img
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
-                width={"350px"}
+                height={"450px"}
+                alt="pikachu"
               />
             ) : theme === "orange" ? (
               <img
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+                height={"450px"}
                 alt="charizard"
               />
             ) : (
               <img
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png"
+                height={"450px"}
                 alt="mewtwo"
               />
             )}
