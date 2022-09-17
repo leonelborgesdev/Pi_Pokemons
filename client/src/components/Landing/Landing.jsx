@@ -1,9 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { changeImgLanding } from "../../redux/action";
 import "./Landing.css";
 
 export const Landing = () => {
   const { theme } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const handleChangetheme = (theme) => {
+    dispatch(changeImgLanding(theme));
+  };
   return (
     <div className="container_landing">
       <div className="card_landing">
@@ -32,21 +37,33 @@ export const Landing = () => {
           </div>
         </div>
         <div className="footer_options">
-          <label>
+          <label
+            onClick={() => {
+              handleChangetheme("red");
+            }}
+          >
             <img
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
               alt="pikachu"
               height={"70px"}
             />
           </label>
-          <label>
+          <label
+            onClick={() => {
+              handleChangetheme("orange");
+            }}
+          >
             <img
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
               alt="charizard"
               height={"70px"}
             />
           </label>
-          <label>
+          <label
+            onClick={() => {
+              handleChangetheme("purple");
+            }}
+          >
             <img
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
               alt="mew two"

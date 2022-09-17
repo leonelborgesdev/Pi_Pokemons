@@ -15,7 +15,7 @@ const rootReducer = (state = initialState, action) => {
     case CHANGE_IMG_LANDING:
       return {
         ...state,
-        theme: payload,
+        theme: action.payload,
       };
     default:
       return {
