@@ -1,4 +1,8 @@
-import { CHANGE_IMG_LANDING, GET_ALL_POKEMONS } from "./type";
+import {
+  CHANGE_IMG_LANDING,
+  GET_ALL_POKEMONS,
+  GET_POKEMON_BY_ID,
+} from "./type";
 
 const api = "http://localhost:3001";
 
@@ -18,6 +22,19 @@ export const getAllPokemons = () => {
       dispatch({
         type: GET_ALL_POKEMONS,
         payload: data.pokemons,
+      });
+    }
+  };
+};
+
+export const getPokemonsById = (id) => {
+  return async function (dispatch) {
+    const response = await fetch(`${api}/pokemons/${id}`);
+    if (response) {
+      const data = await response.json();
+      dispatch({
+        type: GET_POKEMON_BY_ID,
+        payload: data.pokemonObj,
       });
     }
   };
