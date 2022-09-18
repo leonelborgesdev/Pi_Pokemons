@@ -35,6 +35,7 @@ async function getAllPokemons(req, res) {
         model: Type,
         attributes: ["name", "id"],
       },
+      limit: 12,
     });
     return res.status(202).json({ ok: true, pokemons: AllPokemons });
   } catch (error) {

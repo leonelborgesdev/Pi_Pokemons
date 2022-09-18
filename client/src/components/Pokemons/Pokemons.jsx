@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPokemons } from "../../redux/action";
 import { Card } from "../Card/Card";
+import { Paginado } from "../Paginado/Paginado";
 import "./Pokemons.css";
 
 export const Pokemons = () => {
@@ -24,6 +25,7 @@ export const Pokemons = () => {
           <span>No se encontro Pokemons</span>
         )}
       </div>
+      <Paginado />
     </div>
   );
 };
