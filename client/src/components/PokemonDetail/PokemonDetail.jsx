@@ -1,11 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getPokemonsById } from "../../redux/action";
-import "./PokemonId.css";
+import "./PokemonDetail.css";
 
-export const PokemonId = () => {
+export const PokemonDetail = () => {
   const dispatch = useDispatch();
   const { pokemon } = useSelector((state) => state);
   const { id } = useParams();
@@ -27,6 +27,7 @@ export const PokemonId = () => {
           <h3>Speed:{pokemon.speed}</h3>
           <h3>Height:{pokemon.height}</h3>
           <h3>Weight:{pokemon.weight}</h3>
+          <Link to={"/pokemons"}>Volver</Link>
         </div>
       </div>
     </div>

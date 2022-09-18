@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Pokemons } from "./components/Pokemons/Pokemons";
 import { Landing } from "./components/Landing/Landing";
-import { PokemonId } from "./components/PokemonId/PokemonId";
+import { PokemonDetail } from "./components/PokemonDetail/PokemonDetail.jsx";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Landing />} />
         <Route path="/pokemons" element={<Pokemons />} />
-        <Route path="/pokemons/:id" element={<PokemonId />} />
+        <Route path="/pokemons/:id" element={<PokemonDetail />} />
       </Routes>
     </div>
   );
