@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeImgLanding } from "../../redux/action";
+import { Link } from "react-router-dom";
 import "./Landing.css";
 
 export const Landing = () => {
@@ -16,7 +17,9 @@ export const Landing = () => {
           <h1>Pokemons</h1>
         </div>
         <div className="body_description">
-          <div className="body_text"></div>
+          <div className="body_text">
+            <Link to={"/pokemons"}>Ingresar</Link>
+          </div>
           <div className="landing_img">
             {theme === "red" ? (
               <img

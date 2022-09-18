@@ -9,7 +9,6 @@ async function getAllTypes(req, res) {
     const Lineas = await Type.count();
     if (Lineas === 0) {
       AllTypes = await cargar_types("https://pokeapi.co/api/v2/type");
-      console.log(AllTypes);
       await Type.bulkCreate(AllTypes);
     }
     if (name) {

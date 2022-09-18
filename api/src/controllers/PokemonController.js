@@ -1,6 +1,9 @@
 const { Op } = require("sequelize");
 const { Pokemon, Type } = require("../db");
-const { cargar_pokemons } = require("../services/pokemonServices");
+const {
+  cargar_pokemons,
+  charge_all_pokemons,
+} = require("../services/pokemonServices");
 
 async function getAllPokemons(req, res) {
   const { name } = req.query;
@@ -8,11 +11,12 @@ async function getAllPokemons(req, res) {
     let AllPokemons = [];
     const Lineas = await Pokemon.count();
     if (Lineas === 0) {
-      AllPokemons = await cargar_pokemons(
-        //   "https://pokeapi.co/api/v2/pokemon"
-        "https://pokeapi.co/api/v2/pokemon?limit=50"
-      );
-      console.log(AllPokemons);
+      await charge_all_pokemons();
+      //   AllPokemons = await cargar_pokemons(
+      //     //   "https://pokeapi.co/api/v2/pokemon"
+      //     "https://pokeapi.co/api/v2/pokemon?limit=50"
+      //   );
+      //   console.log(AllPokemons);
     }
     if (name) {
       const pokemonNombre = await Pokemon.findAll({
