@@ -1,0 +1,10 @@
+.container_id_detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.container_id_img img{
+    width: 450px;
+    margin: 30px;
+}

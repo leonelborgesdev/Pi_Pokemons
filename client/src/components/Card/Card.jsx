@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Card.css";
 
 export const Card = ({ pokemon }) => {
@@ -12,6 +13,7 @@ export const Card = ({ pokemon }) => {
       </div>
       <h2>{pokemon.name}</h2>
       <h2>Types: {pokemon.types.map((type) => type.name + " ")}</h2>
+      <Link to={`/pokemons/${pokemon.id}`}>Detalle</Link>
     </div>
   );
 };

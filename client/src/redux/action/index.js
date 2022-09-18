@@ -28,6 +28,7 @@ export const getAllPokemons = () => {
 };
 
 export const getPokemonsById = (id) => {
+  console.log(id);
   return async function (dispatch) {
     const response = await fetch(`${api}/pokemons/${id}`);
     if (response) {
