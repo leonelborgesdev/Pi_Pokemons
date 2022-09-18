@@ -8,6 +8,8 @@ const initialState = {
   pokemons: [],
   pokemon: {},
   theme: "red",
+  first: 1,
+  last: 3,
 };
 
 const rootReducer = (state = initialState, action) => {

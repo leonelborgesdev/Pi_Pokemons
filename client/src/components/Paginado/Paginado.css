@@ -1,0 +1,22 @@
+.container_paginado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 70px;
+    width: 100%;
+    position: sticky;
+    bottom: 0px;
+
+}
+.paginado_numero{
+    margin: 5px;
+    background: #d10404;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+.paginado_numero:hover{
+    background: #d63131;
+}
