@@ -18,6 +18,14 @@ export const Landing = () => {
         </div>
         <div className="body_description">
           <div className="body_text">
+            <h2>
+              Ven y conoce a todos los pokemons registrados en nuestra base de
+              datos
+            </h2>
+            <h2>
+              Conoce sus habilidades estadisticas de ataque defensa y velocidad
+            </h2>
+            <h2>Y crea tus propios pokemons</h2>
             <Link to={"/pokemons"}>Ingresar</Link>
           </div>
           <div className="landing_img">
