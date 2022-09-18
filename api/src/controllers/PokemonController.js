@@ -20,7 +20,7 @@ async function getAllPokemons(req, res) {
     }
     if (name) {
       const pokemonNombre = await Pokemon.findAll({
-        attributes: ["id", "name", "sprite"],
+        attributes: ["id", "name", "sprite", "sprite2"],
         include: {
           model: Type,
           attributes: ["name", "id"],
@@ -30,7 +30,7 @@ async function getAllPokemons(req, res) {
       return res.status(200).json({ ok: true, pokemons: pokemonNombre });
     }
     AllPokemons = await Pokemon.findAll({
-      attributes: ["id", "name", "sprite"],
+      attributes: ["id", "name", "sprite", "sprite2"],
       include: {
         model: Type,
         attributes: ["name", "id"],
