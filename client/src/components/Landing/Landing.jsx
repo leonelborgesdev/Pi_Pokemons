@@ -11,8 +11,11 @@ export const Landing = () => {
     dispatch(changeImgLanding(theme));
   };
   return (
-    <div className="container_landing">
+    <div className="container_landing" id={theme}>
+      <div className="circle"></div>
+      <div className="circle2"></div>
       <div className="card_landing">
+        <div className="circleInt"></div>
         <div className="title_landing">
           <h1>Pokemons</h1>
         </div>
@@ -51,39 +54,30 @@ export const Landing = () => {
           </div>
         </div>
         <div className="footer_options">
-          <label
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
+            alt="pikachu"
+            height={"70px"}
             onClick={() => {
               handleChangetheme("red");
             }}
-          >
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-              alt="pikachu"
-              height={"70px"}
-            />
-          </label>
-          <label
+          />
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
+            alt="charizard"
+            height={"70px"}
             onClick={() => {
               handleChangetheme("orange");
             }}
-          >
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
-              alt="charizard"
-              height={"70px"}
-            />
-          </label>
-          <label
+          />
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
+            alt="mew two"
+            height={"70px"}
             onClick={() => {
               handleChangetheme("purple");
             }}
-          >
-            <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-              alt="mew two"
-              height={"70px"}
-            />
-          </label>
+          />
         </div>
       </div>
     </div>
