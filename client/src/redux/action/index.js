@@ -2,6 +2,7 @@ import {
   CHANGE_IMG_LANDING,
   GET_ALL_POKEMONS,
   GET_POKEMON_BY_ID,
+  PAGINADO_POKEMONS,
 } from "./type";
 
 const api = "http://localhost:3001";
@@ -32,10 +33,22 @@ export const getPokemonsById = (id) => {
     const response = await fetch(`${api}/pokemons/${id}`);
     if (response) {
       const data = await response.json();
-      console.log(data);
       dispatch({
         type: GET_POKEMON_BY_ID,
         payload: data.pokemonObj,
+      });
+    }
+  };
+};
+export const paginadoPokemons = (pagina) => {
+  const ultPokemon = pagina * 12;
+  return async function (dispatch) {
+    const response = await fetch(`${api}/pokemons?ultPokemon=${ultPokemon}`);
+    if (response) {
+      const data = await response.json();
+      dispatch({
+        type: PAGINADO_POKEMONS,
+        payload: data.pokemons,
       });
     }
   };
