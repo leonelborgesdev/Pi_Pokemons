@@ -2,6 +2,7 @@ import {
   CHANGE_IMG_LANDING,
   GET_ALL_POKEMONS,
   GET_POKEMON_BY_ID,
+  NEXT_PREVIUS,
   PAGINADO_POKEMONS,
 } from "./type";
 
@@ -51,5 +52,14 @@ export const paginadoPokemons = (pagina) => {
         payload: data.pokemons,
       });
     }
+  };
+};
+export const nextPrevius = (first, last) => {
+  return function (dispatch) {
+    dispatch({
+      type: NEXT_PREVIUS,
+      first,
+      last,
+    });
   };
 };

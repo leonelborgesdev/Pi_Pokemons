@@ -2,6 +2,7 @@ import {
   CHANGE_IMG_LANDING,
   GET_ALL_POKEMONS,
   GET_POKEMON_BY_ID,
+  NEXT_PREVIUS,
   PAGINADO_POKEMONS,
 } from "../action/type";
 
@@ -34,6 +35,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         pokemons: action.payload,
+      };
+    case NEXT_PREVIUS:
+      return {
+        ...state,
+        first: action.first,
+        last: action.last,
       };
     default:
       return {
