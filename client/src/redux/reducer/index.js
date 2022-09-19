@@ -12,6 +12,7 @@ const initialState = {
   theme: "red",
   first: 1,
   last: 3,
+  pagina: 1,
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -35,6 +36,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         pokemons: action.payload,
+        pagina: action.pagina,
       };
     case NEXT_PREVIUS:
       return {

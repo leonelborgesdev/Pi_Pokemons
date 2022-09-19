@@ -42,7 +42,7 @@ export const getPokemonsById = (id) => {
   };
 };
 export const paginadoPokemons = (pagina) => {
-  const ultPokemon = pagina * 12;
+  const ultPokemon = (pagina - 1) * 12;
   return async function (dispatch) {
     const response = await fetch(`${api}/pokemons?ultPokemon=${ultPokemon}`);
     if (response) {
@@ -50,6 +50,7 @@ export const paginadoPokemons = (pagina) => {
       dispatch({
         type: PAGINADO_POKEMONS,
         payload: data.pokemons,
+        pagina: pagina,
       });
     }
   };

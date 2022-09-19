@@ -5,14 +5,14 @@ import "./Paginado.css";
 
 export const Paginado = () => {
   const paginas = 1154 / 12;
-  const { first, last } = useSelector((state) => state);
+  const { first, last, pagina } = useSelector((state) => state);
   const dispatch = useDispatch();
   const array = [];
   for (let i = 0; i < paginas; i++) {
     array.push(i + 1);
   }
   const handlePaginado = (num) => {
-    dispatch(paginadoPokemons(num - 1));
+    dispatch(paginadoPokemons(num));
   };
   const handleChangePage = (first, last) => {
     dispatch(nextPrevius(first, last));
@@ -25,6 +25,7 @@ export const Paginado = () => {
           <div
             className="paginado_numero"
             onClick={() => {
+              handlePaginado(pagina - 1);
               handleChangePage(first - 1, last - 1);
             }}
           >{`<`}</div>
@@ -60,7 +61,7 @@ export const Paginado = () => {
             className="paginado_numero"
             onClick={() => {
               handlePaginado(array.length);
-              handleChangePage(array.length - 3, array.length);
+              handleChangePage(array.length - 2, array.length);
             }}
           >
             {array.length}
@@ -69,6 +70,7 @@ export const Paginado = () => {
             className="paginado_numero"
             onClick={() => {
               handleChangePage(first + 1, last + 1);
+              handlePaginado(pagina + 1);
             }}
           >{`>`}</div>
         </>
