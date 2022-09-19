@@ -1,6 +1,7 @@
 import {
   CHANGE_IMG_LANDING,
   GET_ALL_POKEMONS,
+  GET_POKEMONS_BY_NAME,
   GET_POKEMON_BY_ID,
   NEXT_PREVIUS,
   PAGINADO_POKEMONS,
@@ -18,6 +19,11 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_POKEMONS:
+      return {
+        ...state,
+        pokemons: action.payload,
+      };
+    case GET_POKEMONS_BY_NAME:
       return {
         ...state,
         pokemons: action.payload,

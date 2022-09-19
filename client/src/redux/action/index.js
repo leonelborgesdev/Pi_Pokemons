@@ -1,6 +1,7 @@
 import {
   CHANGE_IMG_LANDING,
   GET_ALL_POKEMONS,
+  GET_POKEMONS_BY_NAME,
   GET_POKEMON_BY_ID,
   NEXT_PREVIUS,
   PAGINADO_POKEMONS,
@@ -28,7 +29,18 @@ export const getAllPokemons = () => {
     }
   };
 };
-
+export const getPokmeonsByName = (name) => {
+  return async function (dispatch) {
+    const response = await fetch(`${api}/pokemons?name=${name}`);
+    if (response) {
+      const data = await response.json();
+      dispatch({
+        type: GET_POKEMONS_BY_NAME,
+        payload: data.pokemons,
+      });
+    }
+  };
+};
 export const getPokemonsById = (id) => {
   return async function (dispatch) {
     const response = await fetch(`${api}/pokemons/${id}`);
