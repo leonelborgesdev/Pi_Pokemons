@@ -34,9 +34,6 @@
     border-radius: 15px ;
     color: #fff;
 }
-.body_text a:hover{
-    background: #cf2e2e;
-}
 .landing_img{
     display: flex;
     align-items: flex-end;
@@ -87,17 +84,26 @@
 #red .body_text a{    
     background: #b90505;
 }
+#red .body_text a:hover{
+    background: #cf2e2e;
+}
 #orange .circleInt,
 #orange .circle,
 #orange .circle2,
 #orange .body_text a{    
     background: #b94d05;
 }
+#orange .body_text a:hover{
+    background: #c56728;
+}
 #purple .circleInt,
 #purple .circle,
 #purple .circle2,
 #purple .body_text a{    
     background: #5c0368;
+}
+#purple .body_text a:hover{
+    background: #81248d;
 }
 @media screen and (max-width: 900px) {
  .body_description{
