@@ -14,8 +14,9 @@ async function getAllPokemons(req, res) {
       await charge_all_pokemons();
     }
     if (ultPokemon) {
-      const AllPokemons = paginadoPokemons(ultPokemon);
-      return res.status(200).json({ ok: true, pokemons: AllPokemons });
+      // const pokemonUlt = await Pokemon.findByPk(ultPokemon);
+      const filterpokemons = await paginadoPokemons(ultPokemon, res);
+      return res.status(200).json({ ok: true, pokemons: filterpokemons });
     }
     if (name) {
       const pokemonNombre = await Pokemon.findAll({
@@ -145,7 +146,7 @@ async function createPokemon(req, res) {
     return res.status(500).json({ ok: false, msg: error });
   }
 }
-async function paginadoPokemons(ultPokemon) {
+async function paginadoPokemons(ultPokemon, res) {
   const AllPokemons = await Pokemon.findAll({
     attributes: ["id", "name", "sprite", "sprite2"],
     include: {
@@ -155,7 +156,7 @@ async function paginadoPokemons(ultPokemon) {
     offset: ultPokemon,
     limit: 12,
   });
-  return AllPokemons;
+  return AllPokemons.map((pokemon) => pokemon.dataValues);
 }
 module.exports = {
   getAllPokemons,
