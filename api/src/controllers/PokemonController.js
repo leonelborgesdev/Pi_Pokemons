@@ -6,17 +6,16 @@ const {
 } = require("../services/pokemonServices");
 
 async function getAllPokemons(req, res) {
-  const { name } = req.query;
+  const { name, ultPokemon } = req.query;
   try {
     let AllPokemons = [];
     const Lineas = await Pokemon.count();
     if (Lineas === 0) {
       await charge_all_pokemons();
-      //   AllPokemons = await cargar_pokemons(
-      //     //   "https://pokeapi.co/api/v2/pokemon"
-      //     "https://pokeapi.co/api/v2/pokemon?limit=50"
-      //   );
-      //   console.log(AllPokemons);
+    }
+    if (ultPokemon) {
+      const AllPokemons = paginadoPokemons(ultPokemon);
+      return res.status(200).json({ ok: true, pokemons: AllPokemons });
     }
     if (name) {
       const pokemonNombre = await Pokemon.findAll({
@@ -146,4 +145,21 @@ async function createPokemon(req, res) {
     return res.status(500).json({ ok: false, msg: error });
   }
 }
-module.exports = { getAllPokemons, getPokemonById, createPokemon };
+async function paginadoPokemons(ultPokemon) {
+  const AllPokemons = await Pokemon.findAll({
+    attributes: ["id", "name", "sprite", "sprite2"],
+    include: {
+      model: Type,
+      attributes: ["name", "id"],
+    },
+    offset: ultPokemon,
+    limit: 12,
+  });
+  return AllPokemons;
+}
+module.exports = {
+  getAllPokemons,
+  getPokemonById,
+  createPokemon,
+  paginadoPokemons,
+};
