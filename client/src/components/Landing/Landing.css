@@ -4,6 +4,8 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
     background: #fff;
 }
 .card_landing{
@@ -11,11 +13,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #e0dede;
+    background: #fff;
     border-radius: 5px;
     width: 94%;
     height: 90%;
     box-shadow: 0px 0px 15px;
+    position: relative;
     overflow: hidden;
     z-index: 1;
 }
@@ -43,24 +46,17 @@
 .landing_img img{
     z-index: 2;
 }
-.footer_options{    
+.footer_options{ 
     z-index: 2;
 }
 .footer_options img{
     cursor: pointer;
+    margin-bottom: 10px;   
     margin-left: 30px;
     transition: 0.5s;
 }
 .footer_options img:hover{
     transform: translateY(-15px);
-}
-.circle{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    clip-path: circle(700px at right 850px);
 }
 .circle2{
     position: absolute;
@@ -68,15 +64,23 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    clip-path: circle(400px at left 0px);
+    clip-path: circle(40% at left 0%);
+}
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(55% at right bottom);
 }
 .circleInt{
     position: absolute;
     top: 0;
     left: 0;
-    width: 97%;
-    height: 95%;
-    clip-path: circle(600px at right 800px);
+    width: 100%;
+    height: 100%;
+    clip-path: circle(50% at right bottom);
 }
 #red .circleInt,
 #red .circle,
@@ -109,11 +113,14 @@
  .body_description{
     flex-direction: column;
  }
+ .landing_img{
+    align-items: center;
+    justify-content: center;
+ }
  .container_landing{
-    height: 100%;
+    height: 130vh;
  }
  .card_landing{
-    /* height: 50%; */
     margin-top: 20px;
     margin-bottom: 20px;
  }
@@ -121,4 +128,32 @@
  .body_text h2{
     width: 100%;
  }
+ 
+.circle{
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(65% at center bottom);
+}
+.circleInt{
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(70% at center bottom);
+}
+}
+@media screen and (max-width: 370px) {
+    
+.circle2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(30% at left 0%);
+}
 }

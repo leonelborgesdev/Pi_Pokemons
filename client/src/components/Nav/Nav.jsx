@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { getPokmeonsByName } from "../../redux/action";
 import "./Nav.css";
 
@@ -8,12 +9,12 @@ export const Nav = () => {
   const handleSearch = (e) => {
     const { value } = e.target;
     if (e.keyCode === 13) {
-      alert("hola :D" + value);
       dispatch(getPokmeonsByName(value));
     }
   };
   return (
     <div>
+      <Link to="/">Landing</Link>
       <input type="text" placeholder="Name" onKeyDown={handleSearch} />
     </div>
   );
