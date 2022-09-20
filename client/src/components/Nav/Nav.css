@@ -1,0 +1,20 @@
+.container_nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.container_nav input{
+    height: 80%;
+    border-radius: 15px;
+    margin: 5px;
+}
+#red .container_nav{
+    background: #f74646;
+}
+#orange .container_nav{
+    background: #f79c46;
+}
+#purple .container_nav{
+    background: #a746f7;
+}

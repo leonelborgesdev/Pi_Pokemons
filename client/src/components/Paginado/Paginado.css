@@ -11,12 +11,26 @@
 }
 .paginado_numero{
     margin: 5px;
-    background: #d10404;
     cursor: pointer;
     color: #fff;
     border-radius: 5px;
     padding: 10px 15px;
 }
-.paginado_numero:hover{
-    background: #d63131;
+#red .container_paginado .paginado_numero{
+    background: #b90505;
+}
+#red .container_paginado .paginado_numero:hover{
+    background: #cf2e2e;
+}
+#orange .container_paginado .paginado_numero{
+    background: #b84900;
+}
+#orange .container_paginado .paginado_numero:hover{
+    background: #c56728;
+}
+#purple .container_paginado .paginado_numero{
+    background: #5c0368;
+}
+#purple .container_paginado .paginado_numero:hover{
+    background: #81248d;
 }

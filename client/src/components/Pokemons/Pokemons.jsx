@@ -9,13 +9,14 @@ import "./Pokemons.css";
 
 export const Pokemons = () => {
   const dispatch = useDispatch();
+  const { theme } = useSelector((state) => state);
   useEffect(() => {
     dispatch(getAllPokemons());
   }, []);
   const { pokemons } = useSelector((state) => state);
   console.log(pokemons);
   return (
-    <div>
+    <div id={theme}>
       <Nav />
       <h1>Pokemons</h1>
       <div className="cards_pokemons">

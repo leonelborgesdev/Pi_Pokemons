@@ -5,9 +5,17 @@
     flex-direction: column;
     padding: 1rem 0px;
     width: 320px;
-    background: #f74646;
     border-radius: 15px;
     margin: 20px;
+}
+#red .card_pokemons{
+    background: #f74646;
+}
+#orange .card_pokemons{
+    background: #f79c46;
+}
+#purple .card_pokemons{
+    background: #a746f7;
 }
 .card_img{
     /* height: 280px; */

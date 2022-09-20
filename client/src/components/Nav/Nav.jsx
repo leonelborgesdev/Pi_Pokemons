@@ -13,7 +13,7 @@ export const Nav = () => {
     }
   };
   return (
-    <div>
+    <div className="container_nav">
       <Link to="/">Landing</Link>
       <input type="text" placeholder="Name" onKeyDown={handleSearch} />
     </div>
