@@ -39,12 +39,16 @@
 }
 .landing_img{
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     width: 50%;
 }
 .landing_img img{
     z-index: 2;
+}
+.landing_img .img_rayos{
+    position: absolute;
+    height: 450px;
 }
 .footer_options{ 
     z-index: 2;

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeImgLanding } from "../../redux/action";
+import rayos3 from "../../assets/rayos3.png";
 import { Link } from "react-router-dom";
 import "./Landing.css";
 
@@ -31,27 +32,32 @@ export const Landing = () => {
             <h2>Y crea tus propios pokemons</h2>
             <Link to={"/pokemons"}>Ingresar</Link>
           </div>
-          <div className="landing_img">
-            {theme === "red" ? (
+          {theme === "red" ? (
+            <div className="landing_img">
               <img
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
                 height={"450px"}
                 alt="pikachu"
               />
-            ) : theme === "orange" ? (
+              <img className="img_rayos" src={rayos3} />
+            </div>
+          ) : theme === "orange" ? (
+            <div className="landing_img">
               <img
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
                 height={"450px"}
                 alt="charizard"
               />
-            ) : (
+            </div>
+          ) : (
+            <div className="landing_img">
               <img
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png"
                 height={"450px"}
                 alt="mewtwo"
               />
-            )}
-          </div>
+            </div>
+          )}
         </div>
         <div className="footer_options">
           <img
