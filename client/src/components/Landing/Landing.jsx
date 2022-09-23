@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeImgLanding } from "../../redux/action";
-import rayos3 from "../../assets/rayos3.png";
+import rayos3 from "../../assets/rayos3.gif";
 import { Link } from "react-router-dom";
 import "./Landing.css";
 
@@ -60,30 +60,36 @@ export const Landing = () => {
           )}
         </div>
         <div className="footer_options">
-          <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-            alt="pikachu"
-            height={"70px"}
-            onClick={() => {
-              handleChangetheme("red");
-            }}
-          />
-          <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
-            alt="charizard"
-            height={"70px"}
-            onClick={() => {
-              handleChangetheme("orange");
-            }}
-          />
-          <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
-            alt="mew two"
-            height={"70px"}
-            onClick={() => {
-              handleChangetheme("purple");
-            }}
-          />
+          <div className="footer_landing">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
+              alt="pikachu"
+              height={"70px"}
+              onClick={() => {
+                handleChangetheme("red");
+              }}
+            />
+          </div>
+          <div className="footer_landing">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
+              alt="charizard"
+              height={"70px"}
+              onClick={() => {
+                handleChangetheme("orange");
+              }}
+            />
+          </div>
+          <div className="footer_landing">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
+              alt="mew two"
+              height={"70px"}
+              onClick={() => {
+                handleChangetheme("purple");
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

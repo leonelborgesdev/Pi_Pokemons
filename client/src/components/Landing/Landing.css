@@ -51,15 +51,17 @@
     height: 450px;
 }
 .footer_options{ 
+    display: flex;
+    flex-direction: row;
     z-index: 2;
 }
-.footer_options img{
+.footer_landing img{
     cursor: pointer;
     margin-bottom: 10px;   
     margin-left: 30px;
     transition: 0.5s;
 }
-.footer_options img:hover{
+.footer_landing img:hover{
     transform: translateY(-15px);
 }
 .circle2{
