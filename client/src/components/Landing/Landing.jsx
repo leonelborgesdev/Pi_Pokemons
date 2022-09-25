@@ -69,6 +69,7 @@ export const Landing = () => {
                 handleChangetheme("red");
               }}
             />
+            <div className="loader"></div>
           </div>
           <div className="footer_landing">
             <img
@@ -79,6 +80,7 @@ export const Landing = () => {
                 handleChangetheme("orange");
               }}
             />
+            <div className="loader"></div>
           </div>
           <div className="footer_landing">
             <img
@@ -89,6 +91,7 @@ export const Landing = () => {
                 handleChangetheme("purple");
               }}
             />
+            <div className="loader"></div>
           </div>
         </div>
       </div>
