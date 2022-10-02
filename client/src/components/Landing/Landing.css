@@ -33,10 +33,11 @@
 .body_text{
     width: 80%;
     text-align: start;
-    margin-left: 20px;
+    margin-left: 40px;
 }
-.title_landing h2{
-    margin: 10px;
+.title_landing h2,
+.body_text h2{
+    margin: 0px;
 }
 .body_text h2,
 .title_landing{
@@ -45,6 +46,7 @@
     line-height: 1.4em;
     font-weight: 500;
 }
+
 .body_text h2 span{
     font-size: 1.2em;
     font-weight: 900;
@@ -60,13 +62,14 @@
     align-items: center;
     justify-content: center;
 }
-.landing_img img{
+.landing_img .img_poke{
     z-index: 2;
-    width: 450px;
+    max-width: 450px;
 }
 .landing_img .img_animate{
+    z-index: 3;
     position: absolute;
-    width: 450px;
+    max-width: 450px;
 }
 .footer_options{ 
     display: flex;
@@ -227,7 +230,7 @@
     height: 100%;
     clip-path: circle(75% at center bottom);
 }
-.landing_img img{
+.landing_img .img_poke{
    width: 90%;
 }
 .landing_img .img_animate{

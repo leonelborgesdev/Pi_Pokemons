@@ -18,7 +18,7 @@ export const Landing = () => {
       <div className="card_landing">
         <div className="circleInt"></div>
         <div className="title_landing">
-          <h2>PokemonsApp</h2>
+          <h2>PokeApp</h2>
         </div>
         <div className="body_description">
           <div className="body_text">
@@ -47,6 +47,7 @@ export const Landing = () => {
           ) : theme === "orange" ? (
             <div className="landing_img">
               <img
+                className="img_poke"
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
                 alt="charizard"
               />
@@ -54,6 +55,7 @@ export const Landing = () => {
           ) : (
             <div className="landing_img">
               <img
+                className="img_poke"
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png"
                 alt="mewtwo"
               />
