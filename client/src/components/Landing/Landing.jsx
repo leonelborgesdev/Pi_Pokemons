@@ -38,8 +38,8 @@ export const Landing = () => {
           {theme === "red" ? (
             <div className="landing_img">
               <img
+                className="img_poke"
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
-                height={"450px"}
                 alt="pikachu"
               />
               <img className="img_animate" src={rayos3} />
@@ -48,7 +48,6 @@ export const Landing = () => {
             <div className="landing_img">
               <img
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
-                height={"450px"}
                 alt="charizard"
               />
             </div>
@@ -56,7 +55,6 @@ export const Landing = () => {
             <div className="landing_img">
               <img
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png"
-                height={"450px"}
                 alt="mewtwo"
               />
             </div>
