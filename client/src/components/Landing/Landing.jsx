@@ -42,7 +42,7 @@ export const Landing = () => {
                 height={"450px"}
                 alt="pikachu"
               />
-              <img className="img_rayos" src={rayos3} />
+              <img className="img_animate" src={rayos3} />
             </div>
           ) : theme === "orange" ? (
             <div className="landing_img">
