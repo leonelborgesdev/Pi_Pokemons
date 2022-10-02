@@ -20,6 +20,7 @@
     box-shadow: 0px 0px 15px;
     position: relative;
     overflow: hidden;
+    font-family: 'Poppins', sans-serif;
     z-index: 1;
 }
 .body_description{
@@ -27,9 +28,25 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    width: 100%;
 }
 .body_text{
     width: 50%;
+    text-align: start;
+}
+.title_landing h2{
+    margin: 10px;
+}
+.body_text h2,
+.title_landing{
+    color: #222;
+    font-size: 3em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+.body_text h2 span{
+    font-size: 1.2em;
+    font-weight: 900;
 }
 .body_text a{
     text-decoration: none;
@@ -41,7 +58,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
 }
 .landing_img img{
     z-index: 2;
@@ -148,7 +164,15 @@
 #purple .body_text a:hover{
     background: #81248d;
 }
-
+#red .body_text h2 span{
+    color: #b90505;
+}
+#orange .body_text h2 span{
+    color: #b94d05;
+}
+#purple .body_text h2 span{
+    color: #5c0368;
+}
 @keyframes animate{
     0%{
         background-position: 0 0;
@@ -166,17 +190,25 @@
     justify-content: center;
  }
  .container_landing{
-    height: 130vh;
+    height: 140vh;
  }
  .card_landing{
     margin-top: 20px;
     margin-bottom: 20px;
  }
- .body_text,
- .body_text h2{
-    width: 100%;
+ .body_text{
+    min-height: 300px;
  }
- 
+ .body_text,
+ .body_text p,
+ .body_text a,
+ .body_text h2{
+    width: 94%;
+    text-align: start;
+ }
+ .title_landing{
+    font-size: 2.5em;
+ }
 .circle{
     position: absolute;
     top: 200px;

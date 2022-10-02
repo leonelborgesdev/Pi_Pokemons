@@ -18,18 +18,21 @@ export const Landing = () => {
       <div className="card_landing">
         <div className="circleInt"></div>
         <div className="title_landing">
-          <h1>Pokemons</h1>
+          <h2>PokemonsApp</h2>
         </div>
         <div className="body_description">
           <div className="body_text">
             <h2>
-              Ven y conoce a todos los pokemons registrados en nuestra base de
-              datos
+              Ven y conoce a todos <br />
+              Los <span>Pokemon</span>
             </h2>
-            <h2>
-              Conoce sus habilidades estadisticas de ataque defensa y velocidad
-            </h2>
-            <h2>Y crea tus propios pokemons</h2>
+            <p>
+              Entra al mundo pokemon, conoce su gran variedad y diversidad, en
+              esta app podras visualizar las caracteristicas mas importantes de
+              ellos, como ser sus habilidades especiales, estadisticas de ataque
+              defensa y velocidad
+              <br />Y crea tus propios pokemons
+            </p>
             <Link to={"/pokemons"}>Ingresar</Link>
           </div>
           {theme === "red" ? (
