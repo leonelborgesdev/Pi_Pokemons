@@ -63,25 +63,29 @@ export const Landing = () => {
           )}
         </div>
         <div className="footer_options">
-          <div className="footer_landing">
+          <div
+            className="footer_landing"
+            onClick={() => {
+              handleChangetheme("red");
+            }}
+          >
             <img
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
               alt="pikachu"
               height={"70px"}
-              onClick={() => {
-                handleChangetheme("red");
-              }}
             />
             <div className="loader"></div>
           </div>
-          <div className="footer_landing">
+          <div
+            className="footer_landing"
+            onClick={() => {
+              handleChangetheme("orange");
+            }}
+          >
             <img
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
               alt="charizard"
               height={"70px"}
-              onClick={() => {
-                handleChangetheme("orange");
-              }}
             />
             <div className="loader"></div>
           </div>
@@ -90,11 +94,13 @@ export const Landing = () => {
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
               alt="mew two"
               height={"70px"}
+            />
+            <div
+              className="loader"
               onClick={() => {
                 handleChangetheme("purple");
               }}
-            />
-            <div className="loader"></div>
+            ></div>
           </div>
         </div>
       </div>

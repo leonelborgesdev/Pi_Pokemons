@@ -84,13 +84,13 @@
     justify-content: center;
     flex-direction: column; 
     margin-left: 30px;
-}
-.footer_landing img{
     cursor: pointer;
-    margin-bottom: 10px;  
     transition: 0.5s;
 }
-.footer_landing img:hover{
+.footer_landing img{
+    margin-bottom: 10px;
+}
+.footer_landing:hover{
     transform: translateY(-15px);
 }
 .loader{
