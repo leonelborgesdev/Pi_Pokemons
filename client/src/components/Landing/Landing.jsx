@@ -89,18 +89,18 @@ export const Landing = () => {
             />
             <div className="loader"></div>
           </div>
-          <div className="footer_landing">
+          <div
+            className="footer_landing"
+            onClick={() => {
+              handleChangetheme("purple");
+            }}
+          >
             <img
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/150.svg"
               alt="mew two"
               height={"70px"}
             />
-            <div
-              className="loader"
-              onClick={() => {
-                handleChangetheme("purple");
-              }}
-            ></div>
+            <div className="loader"></div>
           </div>
         </div>
       </div>
