@@ -9,13 +9,13 @@
     margin: 20px;
 }
 #red .card_pokemons{
-    background: #f74646;
+    border:1px solid #f74646;
 }
 #orange .card_pokemons{
-    background: #f79c46;
+    border:1px solid #f79c46;
 }
 #purple .card_pokemons{
-    background: #a746f7;
+    border:1px solid #a746f7;
 }
 .card_img{
     /* height: 280px; */
