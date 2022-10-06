@@ -18,15 +18,17 @@ export const Pokemons = () => {
   return (
     <div id={theme}>
       <Nav />
-      <h1>Pokemons</h1>
-      <div className="cards_pokemons">
-        {pokemons.length > 0 ? (
-          pokemons.map((pokemon) => {
-            return <Card pokemon={pokemon} key={pokemon.id} />;
-          })
-        ) : (
-          <span>No se encontro Pokemons</span>
-        )}
+      <div className="container_pokemons">
+        <h1>Pokemons</h1>
+        <div className="cards_pokemons">
+          {pokemons.length > 0 ? (
+            pokemons.map((pokemon) => {
+              return <Card pokemon={pokemon} key={pokemon.id} />;
+            })
+          ) : (
+            <span>No se encontro Pokemons</span>
+          )}
+        </div>
       </div>
       <Paginado />
     </div>

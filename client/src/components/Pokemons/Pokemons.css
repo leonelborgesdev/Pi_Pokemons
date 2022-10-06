@@ -1,3 +1,6 @@
+.container_pokemons{
+    background: linear-gradient(to right #5c0368, #5c0368,transparent);
+}
 .cards_pokemons{
     display: flex;
     align-items: center;
