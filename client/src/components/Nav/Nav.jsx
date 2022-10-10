@@ -20,7 +20,7 @@ export const Nav = () => {
         <Link to="/">
           <img src={pokemon_icon} alt="app" height={"50"} />
         </Link>
-        <Link to="/">
+        <Link to="/pokemons">
           <img src={pokemon_icon2} alt="app" height={"50"} />
         </Link>
       </div>
