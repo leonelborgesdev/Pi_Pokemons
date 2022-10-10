@@ -27,7 +27,7 @@ export const PokemonDetail = () => {
           <h3>Speed:{pokemon.speed}</h3>
           <h3>Height:{pokemon.height}</h3>
           <h3>Weight:{pokemon.weight}</h3>
-          <a href="/pokemons">Volver</a>
+          <Link to={"/pokemons"}>Volver</Link>
         </div>
       </div>
     </div>

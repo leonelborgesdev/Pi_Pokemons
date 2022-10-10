@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getPokmeonsByName } from "../../redux/action";
+import pokemon_icon2 from "../../assets/pokemon_icon2.png";
+import pokemon_icon from "../../assets/pokemon_icon.png";
 import "./Nav.css";
 
 export const Nav = () => {
@@ -14,7 +16,14 @@ export const Nav = () => {
   };
   return (
     <div className="container_nav">
-      <Link to="/">Landing</Link>
+      <div className="container_nav_home">
+        <Link to="/">
+          <img src={pokemon_icon} alt="app" height={"50"} />
+        </Link>
+        <Link to="/">
+          <img src={pokemon_icon2} alt="app" height={"50"} />
+        </Link>
+      </div>
       <input type="text" placeholder="Name" onKeyDown={handleSearch} />
     </div>
   );

@@ -4,17 +4,22 @@
     align-items: center;
     height: 50px;
 }
+.container_nav_home a{
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 10px;
+}
 .container_nav input{
     height: 80%;
     border-radius: 15px;
     margin: 5px;
 }
 #red .container_nav{
-    background: #f74646;
+    background: #b90505;
 }
 #orange .container_nav{
-    background: #f79c46;
+    background: #b94d05;
 }
 #purple .container_nav{
-    background: #a746f7;
+    background: #5c0368;
 }
