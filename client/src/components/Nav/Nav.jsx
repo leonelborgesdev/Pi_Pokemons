@@ -24,9 +24,6 @@ export const Nav = () => {
   return (
     <>
       <div className="container_nav">
-        <Link to={"#"} className={"menu-bars"}>
-          <FaIcons.FaBars onClick={showSidebar} />
-        </Link>
         <div className="container_nav_home">
           <Link to="/">
             <img src={pokemon_icon} alt="app" height={"50"} />
@@ -36,6 +33,9 @@ export const Nav = () => {
           </Link>
         </div>
         <input type="text" placeholder="Name" onKeyDown={handleSearch} />
+        <Link to={"#"} className={"menu-bars"}>
+          <FaIcons.FaBars onClick={showSidebar} />
+        </Link>
       </div>
       <div className={sidebar ? "nav_menu active" : "nav_menu"}>
         <ul className="nav-menu-items">
@@ -44,28 +44,25 @@ export const Nav = () => {
               <AiIcons.AiOutlineClose />
             </Link>
           </li>
-          <li className="navbar-toogle">
-            <Link to={"#"} className={"menu-bars"}>
-              <AiIcons.AiOutlineClose />
+          <li className="nav-text">
+            <Link to={"#"}>
               <span>Types</span>
             </Link>
           </li>
-          <li className="navbar-toogle">
-            <Link to={"#"} className={"menu-bars"}>
-              <AiIcons.AiOutlineClose />
+          <li className="nav-text">
+            <Link to={"#"}>
               <span>Ordenar</span>
             </Link>
           </li>
-          <li className="navbar-toogle">
-            <Link to={"#"} className={"menu-bars"}>
-              <AiIcons.AiOutlineClose />
-              <span>Crear</span>
+          <li className="nav-text">
+            <Link to={"#"}>
+              <span>Alfabetico</span>
             </Link>
           </li>
-          <li className="navbar-toogle">
-            <Link to={"#"} className={"menu-bars"}>
-              <AiIcons.AiOutlineClose />
-              <span>Types</span>
+          <li className="nav-text">
+            <Link to={"#"}>
+              <AiIcons.AiFillPlusCircle />
+              <span>Crear</span>
             </Link>
           </li>
         </ul>

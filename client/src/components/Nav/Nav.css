@@ -23,3 +23,19 @@
 #purple .container_nav{
     background: #5c0368;
 }
+.menu-bars{
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+}
+.nav_menu{
+    background-color: #060b26;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: 850ms;
+}
