@@ -59,6 +59,16 @@ export const Nav = () => {
             </li>
             <li className="nav-text">
               <Link to={"#"}>
+                <span>Ordenar</span>
+              </Link>
+            </li>
+            <li className={sidebarTypes ? "nav-text active" : "nav-text"}>
+              <Link
+                to={"#"}
+                onClick={() => {
+                  showSidebar(setSidebarTypes, sidebarTypes);
+                }}
+              >
                 <span>Types</span>
               </Link>
               <ul className="menu__inside">
@@ -66,11 +76,6 @@ export const Nav = () => {
                 <li className="menu__inside">grass</li>
                 <li className="menu__inside">water</li>
               </ul>
-            </li>
-            <li className="nav-text">
-              <Link to={"#"}>
-                <span>Ordenar</span>
-              </Link>
             </li>
             <li className="nav-text">
               <Link to={"#"}>
