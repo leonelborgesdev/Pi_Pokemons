@@ -19,8 +19,9 @@ export const Nav = () => {
     }
   };
   const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => {
-    setSidebar(!sidebar);
+  const [sidebarTypes, setSidebarTypes] = useState(false);
+  const showSidebar = (setSidebarVal, sidebarVar) => {
+    setSidebarVal(!sidebarVar);
   };
   return (
     <>
@@ -37,7 +38,11 @@ export const Nav = () => {
           <input type="text" placeholder="Name" onKeyDown={handleSearch} />
           <div className="contenedor_toogle">
             <Link to={"#"} className={"menu-bars"}>
-              <FaIcons.FaBars onClick={showSidebar} />
+              <FaIcons.FaBars
+                onClick={() => {
+                  showSidebar(setSidebar, sidebar);
+                }}
+              />
             </Link>
           </div>
         </div>
@@ -45,13 +50,22 @@ export const Nav = () => {
           <ul className="nav-menu-items">
             <li className="navbar-toogle">
               <Link to={"#"} className={"menu-bars"}>
-                <AiIcons.AiOutlineClose onClick={showSidebar} />
+                <AiIcons.AiOutlineClose
+                  onClick={() => {
+                    showSidebar(setSidebar, sidebar);
+                  }}
+                />
               </Link>
             </li>
             <li className="nav-text">
               <Link to={"#"}>
                 <span>Types</span>
               </Link>
+              <ul className="menu__inside">
+                <li className="menu__inside">fire</li>
+                <li className="menu__inside">grass</li>
+                <li className="menu__inside">water</li>
+              </ul>
             </li>
             <li className="nav-text">
               <Link to={"#"}>
