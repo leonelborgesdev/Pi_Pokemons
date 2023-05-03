@@ -35,7 +35,10 @@ export const Paginado = () => {
               handlePaginado(1);
               handleChangePage(1, 3);
             }}
-          >{`1`}</div>
+          >
+            {`1`}
+          </div>
+          <p>....</p>
         </>
       )}
 
@@ -57,6 +60,7 @@ export const Paginado = () => {
       })}
       {last !== 97 && (
         <>
+          <p>....</p>
           <div
             className="paginado_numero"
             onClick={() => {
