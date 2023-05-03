@@ -16,6 +16,13 @@
     border-radius: 5px;
     padding: 10px 15px;
 }
+.paginado_numero_seleccionada{
+    margin: 5px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
 
 #red .container_paginado .paginado_numero_seleccionada{
     background: #cf2e2e;
