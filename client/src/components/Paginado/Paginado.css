@@ -16,6 +16,10 @@
     border-radius: 5px;
     padding: 10px 15px;
 }
+
+#red .container_paginado .paginado_numero_seleccionada{
+    background: #cf2e2e;
+}
 #red .container_paginado .paginado_numero{
     background: #b90505;
 }

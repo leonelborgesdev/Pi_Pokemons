@@ -41,19 +41,31 @@ export const Paginado = () => {
           <p>....</p>
         </>
       )}
-
       {array.map((num) => {
         return (
           <React.Fragment key={num}>
             {num >= first && num <= last && (
-              <div
-                className="paginado_numero"
-                onClick={() => {
-                  handlePaginado(num);
-                }}
-              >
-                {num}
-              </div>
+              <>
+                {pagina.toString() === num.toString() ? (
+                  <div
+                    className="paginado_numero_seleccionada"
+                    onClick={() => {
+                      handlePaginado(pagina);
+                    }}
+                  >
+                    {pagina}
+                  </div>
+                ) : (
+                  <div
+                    className="paginado_numero"
+                    onClick={() => {
+                      handlePaginado(num);
+                    }}
+                  >
+                    {num}
+                  </div>
+                )}
+              </>
             )}
           </React.Fragment>
         );
