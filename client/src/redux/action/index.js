@@ -54,7 +54,7 @@ export const getPokemonsById = (id) => {
   };
 };
 export const organize_type = (pokemon) => {
-  console.log("pokemon", pokemon);
+  const array = pokemon.types.reverse();
   const pokemon_reverse = {
     defending: pokemon.defending,
     height: pokemon.height,
@@ -65,8 +65,14 @@ export const organize_type = (pokemon) => {
     sprite: pokemon.sprite,
     sprite2: pokemon.sprite2,
     strength: pokemon.strength,
-    types: pokemon.types.reverse(),
+    types: array,
   };
+  console.log(
+    "pokemon",
+    pokemon.types,
+    "pokemon reverse",
+    pokemon_reverse.types
+  );
   return pokemon_reverse;
 };
 export const paginadoPokemons = (pagina) => {
