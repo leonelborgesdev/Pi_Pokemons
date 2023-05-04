@@ -20,11 +20,29 @@
 #ground{
     background: rgb(165, 91, 42);
 }
+#rock{
+    background: rgb(187, 165, 67);
+}
+#steel{
+    background: rgb(138, 135, 135);
+}
 #poison{
     background: rgb(88, 2, 88);
 }
 #psychic{
     background: #81248d;
+}
+#fighting{
+    background: rgb(173, 28, 28);
+}
+#bug{
+    background: rgb(6, 182, 6);
+}
+#flying{
+    background: #7ceaee;
+}
+#ice{
+    background: rgb(221, 236, 241);
 }
 .container_id_detail{
     display: flex;
