@@ -17,7 +17,6 @@ export const Paginado = () => {
   const handleChangePage = (first, last) => {
     dispatch(nextPrevius(first, last));
   };
-  console.log(array.length);
   return (
     <div className="container_paginado">
       {first !== 1 && (

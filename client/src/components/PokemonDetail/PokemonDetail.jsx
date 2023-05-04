@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
@@ -8,15 +8,19 @@ import "./PokemonDetail.css";
 export const PokemonDetail = () => {
   const dispatch = useDispatch();
   const { pokemon } = useSelector((state) => state);
+  const types_primary = ["fire", "grass", "water"];
+  const [bagr, setbagr] = useState("");
   const { id } = useParams();
   useEffect(() => {
     dispatch(getPokemonsById(id));
   }, []);
-  const bagr = "grass";
   return (
     <div className="container_id">
       <h1>Detail Pokemons</h1>
-      <div className="container_id_detail" id={bagr}>
+      <div
+        className="container_id_detail"
+        id={pokemon.types !== undefined ? pokemon.types[0].name : "none"}
+      >
         <div className="container_id_img">
           <img src={pokemon.sprite ? pokemon.sprite : pokemon.sprite2} alt="" />
         </div>
