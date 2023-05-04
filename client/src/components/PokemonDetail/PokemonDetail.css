@@ -6,7 +6,25 @@
     flex-direction: column;
 }
 #grass{
-    background: green;
+    background: rgb(3, 97, 3);
+}
+#fire{
+    background: rgb(255, 51, 0);
+}
+#water{
+    background: rgb(0, 153, 255);
+}
+#electric{
+    background: yellow;
+}
+#ground{
+    background: rgb(165, 91, 42);
+}
+#poison{
+    background: rgb(88, 2, 88);
+}
+#psychic{
+    background: #81248d;
 }
 .container_id_detail{
     display: flex;
