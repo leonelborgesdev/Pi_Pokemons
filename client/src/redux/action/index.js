@@ -48,10 +48,26 @@ export const getPokemonsById = (id) => {
       const data = await response.json();
       dispatch({
         type: GET_POKEMON_BY_ID,
-        payload: data.pokemonObj,
+        payload: organize_type(data.pokemonObj),
       });
     }
   };
+};
+export const organize_type = (pokemon) => {
+  console.log("pokemon", pokemon);
+  const pokemon_reverse = {
+    defending: pokemon.defending,
+    height: pokemon.height,
+    id: pokemon.id,
+    life: pokemon.life,
+    name: pokemon.name,
+    speed: pokemon.speed,
+    sprite: pokemon.sprite,
+    sprite2: pokemon.sprite2,
+    strength: pokemon.strength,
+    types: pokemon.types.reverse(),
+  };
+  return pokemon_reverse;
 };
 export const paginadoPokemons = (pagina) => {
   const ultPokemon = (pagina - 1) * 12;
