@@ -53,6 +53,9 @@
 #normal{
     background: grey;
 }
+#dark{
+    background: #272727;
+}
 .container_id_detail{
     display: flex;
     width: 100%;
