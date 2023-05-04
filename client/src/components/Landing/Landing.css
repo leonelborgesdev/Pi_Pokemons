@@ -35,6 +35,9 @@
     text-align: start;
     margin-left: 40px;
 }
+.body_text div{
+    margin: 20px;
+}
 .title_landing h2,
 .body_text h2{
     margin: 0px;

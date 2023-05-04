@@ -22,18 +22,22 @@ export const Landing = () => {
         </div>
         <div className="body_description">
           <div className="body_text">
-            <h2>
-              Ven y conoce a todos <br />
-              Los <span>Pokemon</span>
-            </h2>
-            <p>
-              Entra al mundo pokemon, conoce su gran variedad y diversidad, en
-              esta app podras visualizar las caracteristicas mas importantes de
-              ellos, como ser sus habilidades especiales, estadisticas de ataque
-              defensa y velocidad
-              <br />Y crea tus propios pokemons
-            </p>
-            <Link to={"/pokemons"}>Ingresar</Link>
+            <div>
+              <h2>
+                Ven y conoce a todos <br />
+                Los <span>Pokemon</span>
+              </h2>
+              <p>
+                Entra al mundo pokemon, conoce su gran variedad y diversidad, en
+                esta app podras visualizar las caracteristicas mas importantes
+                de ellos, como ser sus habilidades especiales, estadisticas de
+                ataque defensa y velocidad
+                <br />Y crea tus propios pokemons
+              </p>
+            </div>
+            <div>
+              <Link to={"/pokemons"}>Ingresar</Link>
+            </div>
           </div>
           {theme === "red" ? (
             <div className="landing_img">
