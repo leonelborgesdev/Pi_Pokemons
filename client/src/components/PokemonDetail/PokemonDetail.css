@@ -6,43 +6,52 @@
     flex-direction: column;
 }
 #grass{
-    background: rgb(3, 97, 3);
+    background: #036103;
 }
 #fire{
-    background: rgb(255, 51, 0);
+    background: #ff3300;
 }
 #water{
-    background: rgb(0, 153, 255);
+    background: #0099ff;
 }
 #electric{
-    background: yellow;
+    background: #ffff00;
 }
 #ground{
-    background: rgb(165, 91, 42);
+    background: #a55b2a;
 }
 #rock{
-    background: rgb(187, 165, 67);
+    background: #bba543;
 }
 #steel{
-    background: rgb(138, 135, 135);
+    background: #8a8787;
 }
 #poison{
-    background: rgb(88, 2, 88);
+    background: #580258;
 }
 #psychic{
     background: #81248d;
 }
 #fighting{
-    background: rgb(173, 28, 28);
+    background: #ad1c1c;
+}
+#fairy{
+    background: #fa8de2;
+}
+#ghost{
+    background: #411e6e;
 }
 #bug{
-    background: rgb(6, 182, 6);
+    background: #06b606;
 }
 #flying{
-    background: #7ceaee;
+    background: #79eff3;
 }
 #ice{
-    background: rgb(221, 236, 241);
+    background: #b8e4f3;
+}
+#ice{
+    background: grey;
 }
 .container_id_detail{
     display: flex;
