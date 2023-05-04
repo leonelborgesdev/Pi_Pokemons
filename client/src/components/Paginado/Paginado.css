@@ -27,6 +27,12 @@
 #red .container_paginado .paginado_numero_seleccionada{
     background: #cf2e2e;
 }
+#orange .container_paginado .paginado_numero_seleccionada{
+    background: #c56728;
+}
+#purple .container_paginado .paginado_numero_seleccionada{
+    background: #81248d;
+}
 #red .container_paginado .paginado_numero{
     background: #b90505;
 }
