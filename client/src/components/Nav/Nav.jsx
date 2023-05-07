@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getPokmeonsByName } from "../../redux/action";
-import pokemon_icon2 from "../../assets/pokemon_icon2.png";
-import pokemon_icon from "../../assets/pokemon_icon.png";
+import pokedex from "../../assets/pokedex.png";
+import pokemon_icon1 from "../../assets/pokemon_icon1.png";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import "./Nav.css";
@@ -12,6 +12,7 @@ import { IconContext } from "react-icons";
 
 export const Nav = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleSearch = (e) => {
     const { value } = e.target;
     if (e.keyCode === 13) {
@@ -29,10 +30,11 @@ export const Nav = () => {
         <div className="container_nav">
           <div className="container_nav_home">
             <Link to="/">
-              <img src={pokemon_icon} alt="app" height={"50"} />
+              <img src={pokemon_icon1} alt="app" height={"30"} />
+              <span>AboutMe</span>
             </Link>
             <Link to="/pokemons">
-              <img src={pokemon_icon2} alt="app" height={"50"} />
+              <img src={pokedex} alt="app" height={"50"} />
             </Link>
           </div>
           <input type="text" placeholder="Name" onKeyDown={handleSearch} />
@@ -83,9 +85,15 @@ export const Nav = () => {
               </Link>
             </li>
             <li className="nav-text">
-              <Link to={"#"}>
+              <Link to={"/pokemons/Create"}>
                 <AiIcons.AiFillPlusCircle />
-                <span>Crear</span>
+                <span
+                  onClick={() => {
+                    navigate("/pokemons/Create");
+                  }}
+                >
+                  Crear
+                </span>
               </Link>
             </li>
           </ul>

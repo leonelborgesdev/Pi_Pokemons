@@ -1,8 +1,12 @@
 import React from "react";
+import { Nav } from "../Nav/Nav";
+import { useSelector } from "react-redux";
 
 export const CreatePokemon = () => {
+  const { theme } = useSelector((state) => state);
   return (
-    <div>
+    <div id={theme}>
+      <Nav />
       <h1>Create Pokemon</h1>
       <div>
         <input type="text" placeholder="Name" />

@@ -7,3 +7,12 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.pet_pokemons{
+  display: flex;
+  justify-content: flex-start;
+  bottom: 20px;
+  left: 20px;
+  position: sticky;
+  z-index: 100;
+  /* background-color: #2193b0; */
+}
