@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllPokemons } from "../../redux/action";
+import { getAllPokemons, paginadoPokemons } from "../../redux/action";
 import { Card } from "../Card/Card";
 import { Nav } from "../Nav/Nav";
 import { Paginado } from "../Paginado/Paginado";
@@ -9,12 +9,12 @@ import "./Pokemons.css";
 
 export const Pokemons = () => {
   const dispatch = useDispatch();
-  const { theme } = useSelector((state) => state);
+  const { theme, pagina } = useSelector((state) => state);
   useEffect(() => {
-    dispatch(getAllPokemons());
+    console.log(pagina);
+    dispatch(paginadoPokemons(pagina));
   }, []);
   const { pokemons } = useSelector((state) => state);
-  console.log(pokemons);
   return (
     <div id={theme}>
       <Nav />

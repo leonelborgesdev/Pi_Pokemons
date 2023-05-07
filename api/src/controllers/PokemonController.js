@@ -64,6 +64,7 @@ async function getPokemonById(req, res) {
         attributes: ["name", "id"],
       },
     });
+    // console.log(pokemonObj.dataValues.types);
     return res.status(200).json({ okey: true, pokemonObj });
   } catch (error) {
     console.log(error);

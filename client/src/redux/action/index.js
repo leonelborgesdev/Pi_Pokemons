@@ -46,9 +46,11 @@ export const getPokemonsById = (id) => {
     const response = await fetch(`${api}/pokemons/${id}`);
     if (response) {
       const data = await response.json();
+      console.log(data.pokemonObj, "pokemooooon data");
       dispatch({
         type: GET_POKEMON_BY_ID,
         payload: organize_type(data.pokemonObj),
+        // payload: data.pokemonObj,
       });
     }
   };
@@ -58,6 +60,7 @@ export const organize_type = (pokemon) => {
   const pokemon_reverse = {
     defending: pokemon.defending,
     height: pokemon.height,
+    weight: pokemon.weight,
     id: pokemon.id,
     life: pokemon.life,
     name: pokemon.name,
@@ -67,12 +70,7 @@ export const organize_type = (pokemon) => {
     strength: pokemon.strength,
     types: array,
   };
-  console.log(
-    "pokemon",
-    pokemon.types,
-    "pokemon reverse",
-    pokemon_reverse.types
-  );
+  console.log("pokemon", pokemon, "pokemon reverse", pokemon_reverse);
   return pokemon_reverse;
 };
 export const paginadoPokemons = (pagina) => {
