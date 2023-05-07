@@ -29,7 +29,7 @@ export const Nav = () => {
       <IconContext.Provider value={{ color: "#fff" }}>
         <div className="container_nav">
           <div className="container_nav_home">
-            <Link to="/">
+            <Link to="/pokemons/AboutMe">
               <img src={pokemon_icon1} alt="app" height={"50"} />
             </Link>
             <Link to="/pokemons">
