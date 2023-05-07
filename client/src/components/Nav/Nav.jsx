@@ -30,8 +30,7 @@ export const Nav = () => {
         <div className="container_nav">
           <div className="container_nav_home">
             <Link to="/">
-              <img src={pokemon_icon1} alt="app" height={"30"} />
-              <span>AboutMe</span>
+              <img src={pokemon_icon1} alt="app" height={"50"} />
             </Link>
             <Link to="/pokemons">
               <img src={pokedex} alt="app" height={"50"} />
