@@ -28,7 +28,10 @@ export const PokemonDetail = () => {
           <div>
             {pokemon !== undefined ? (
               <React.Fragment>
-                <h2>{pokemon.name}</h2>
+                <h1>
+                  {pokemon.name !== undefined &&
+                    pokemon.name.toString().toUpperCase()}
+                </h1>
                 <h3>Life:{pokemon.life}</h3>
                 <h3>Strength:{pokemon.strength}</h3>
                 <h3>Defending:{pokemon.defending}</h3>

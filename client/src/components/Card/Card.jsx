@@ -11,7 +11,7 @@ export const Card = ({ pokemon }) => {
           alt="image"
         />
       </div>
-      <h2>{pokemon.name}</h2>
+      <h2>{pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}</h2>
       <h2>Types: {pokemon.types.map((type) => type.name + " ")}</h2>
       <Link to={`/pokemons/${pokemon.id}`}>Detalle</Link>
     </div>
