@@ -8,8 +8,6 @@ import "./PokemonDetail.css";
 export const PokemonDetail = () => {
   const dispatch = useDispatch();
   const { pokemon, theme } = useSelector((state) => state);
-  const types_primary = ["fire", "grass", "water"];
-  const [bagr, setbagr] = useState("");
   const { id } = useParams();
   useEffect(() => {
     dispatch(getPokemonsById(id));
