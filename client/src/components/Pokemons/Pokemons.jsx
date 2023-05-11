@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { paginadoPokemons } from "../../redux/action";
+import { getAllTypesPokemon, paginadoPokemons } from "../../redux/action";
 import pokeball from "../../assets/pokeball.gif";
 import { Card } from "../Card/Card";
 import { Nav } from "../Nav/Nav";
@@ -15,6 +15,7 @@ export const Pokemons = () => {
   useEffect(() => {
     console.log(pagina);
     dispatch(paginadoPokemons(pagina));
+    dispatch(getAllTypesPokemon());
   }, []);
   const { pokemons } = useSelector((state) => state);
   return (

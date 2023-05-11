@@ -1,6 +1,7 @@
 import {
   CHANGE_IMG_LANDING,
   GET_ALL_POKEMONS,
+  GET_ALL_TYPES,
   GET_POKEMONS_BY_NAME,
   GET_POKEMON_BY_ID,
   NEXT_PREVIUS,
@@ -15,6 +16,18 @@ export const changeImgLanding = (theme) => {
       type: CHANGE_IMG_LANDING,
       payload: theme,
     });
+  };
+};
+export const getAllTypesPokemon = () => {
+  return async function (dispatch) {
+    const response = await fetch(`${api}/types`);
+    if (response) {
+      const data = await response.json();
+      dispatch({
+        type: GET_ALL_TYPES,
+        payload: data.types,
+      });
+    }
   };
 };
 export const getAllPokemons = () => {

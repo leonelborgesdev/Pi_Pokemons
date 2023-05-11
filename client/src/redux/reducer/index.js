@@ -1,6 +1,7 @@
 import {
   CHANGE_IMG_LANDING,
   GET_ALL_POKEMONS,
+  GET_ALL_TYPES,
   GET_POKEMONS_BY_NAME,
   GET_POKEMON_BY_ID,
   NEXT_PREVIUS,
@@ -9,6 +10,7 @@ import {
 
 const initialState = {
   pokemons: [],
+  types: [],
   pokemon: {},
   theme: "red",
   first: 1,
@@ -22,6 +24,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         pokemons: action.payload,
+      };
+    case GET_ALL_TYPES:
+      return {
+        ...state,
+        types: action.payload,
       };
     case GET_POKEMONS_BY_NAME:
       return {

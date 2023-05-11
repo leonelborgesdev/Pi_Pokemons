@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Nav } from "../Nav/Nav";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./CreatePokemon.css";
 import { useNavigate } from "react-router-dom";
+import { getAllTypesPokemon } from "../../redux/action";
 
 export const CreatePokemon = () => {
-  const { theme } = useSelector((state) => state);
+  const { theme, types } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllTypesPokemon());
+  }, []);
   const navigate = useNavigate();
   return (
     <div id={theme}>
@@ -29,10 +34,16 @@ export const CreatePokemon = () => {
                 <input type="text" placeholder="Weight" />
               </div>
               <div className="form_create_types">
-                <label>Fire</label>
-                <label>Grass</label>
-                <label>Water</label>
-                <label>Ice</label>
+                {types !== undefined &&
+                  types.map((type) => {
+                    return (
+                      <React.Fragment>
+                        <div className="">
+                          <label>{type.name}</label>
+                        </div>
+                      </React.Fragment>
+                    );
+                  })}
               </div>
             </div>
             <div className="botones_create">
