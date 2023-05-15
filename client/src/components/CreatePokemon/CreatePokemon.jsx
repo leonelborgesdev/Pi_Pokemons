@@ -25,13 +25,18 @@ export const CreatePokemon = () => {
           <div className="form_create">
             <div className="form_create_info">
               <div className="form_create_inputs">
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Life" />
-                <input type="text" placeholder="Strength" />
-                <input type="text" placeholder="Defending" />
-                <input type="text" placeholder="Speed" />
-                <input type="text" placeholder="Heigth" />
-                <input type="text" placeholder="Weight" />
+                <input type="text" name="name" placeholder="Name" />
+                <input type="text" name="life" placeholder="Life" />
+                <input type="text" name="strength" placeholder="Strength" />
+                <input type="text" name="defending" placeholder="Defending" />
+                <input type="text" name="speed" placeholder="Speed" />
+                <input type="text" name="heigth" placeholder="Heigth" />
+                <input type="text" name="weight" placeholder="Weight" />
+                <input
+                  type="text"
+                  name="url_image"
+                  placeholder="Url Image..."
+                />
               </div>
               <div className="form_create_types">
                 {types !== undefined &&
