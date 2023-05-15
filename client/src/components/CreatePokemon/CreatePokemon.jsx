@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Nav } from "../Nav/Nav";
 import { useDispatch, useSelector } from "react-redux";
 import "./CreatePokemon.css";
@@ -7,11 +7,23 @@ import { getAllTypesPokemon } from "../../redux/action";
 
 export const CreatePokemon = () => {
   const { theme, types } = useSelector((state) => state);
+  const { pokemon, setPokemon } = useState({
+    id: "",
+    name: "",
+    life: "",
+    strength: "",
+    defending: "",
+    speed: "",
+    height: "",
+    weight: "",
+    url_image: "",
+  });
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllTypesPokemon());
   }, []);
   const navigate = useNavigate();
+  const handleChange = (e) => {};
   return (
     <div id={theme}>
       <Nav />
@@ -42,8 +54,8 @@ export const CreatePokemon = () => {
                 {types !== undefined &&
                   types.map((type) => {
                     return (
-                      <React.Fragment>
-                        <div className="">
+                      <React.Fragment key={type.id}>
+                        <div className="lbType">
                           <label>{type.name}</label>
                         </div>
                       </React.Fragment>
