@@ -7,7 +7,7 @@ import { getAllTypesPokemon } from "../../redux/action";
 
 export const CreatePokemon = () => {
   const { theme, types } = useSelector((state) => state);
-  const { pokemon, setPokemon } = useState({
+  const [pokemon, setPokemon] = useState({
     id: "",
     name: "",
     life: "",
@@ -23,7 +23,11 @@ export const CreatePokemon = () => {
     dispatch(getAllTypesPokemon());
   }, []);
   const navigate = useNavigate();
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setPokemon({ ...pokemon, [name]: value });
+    console.log(pokemon);
+  };
   return (
     <div id={theme}>
       <Nav />
@@ -37,13 +41,48 @@ export const CreatePokemon = () => {
           <div className="form_create">
             <div className="form_create_info">
               <div className="form_create_inputs">
-                <input type="text" name="name" placeholder="Name" />
-                <input type="text" name="life" placeholder="Life" />
-                <input type="text" name="strength" placeholder="Strength" />
-                <input type="text" name="defending" placeholder="Defending" />
-                <input type="text" name="speed" placeholder="Speed" />
-                <input type="text" name="heigth" placeholder="Heigth" />
-                <input type="text" name="weight" placeholder="Weight" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="life"
+                  placeholder="Life"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="strength"
+                  placeholder="Strength"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="defending"
+                  placeholder="Defending"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="speed"
+                  placeholder="Speed"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="heigth"
+                  placeholder="Heigth"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="weight"
+                  placeholder="Weight"
+                  onChange={handleChange}
+                />
                 <input
                   type="text"
                   name="url_image"
