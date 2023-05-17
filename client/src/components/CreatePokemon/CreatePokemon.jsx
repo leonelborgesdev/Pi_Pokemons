@@ -17,7 +17,10 @@ export const CreatePokemon = () => {
     height: "",
     weight: "",
     url_image: "",
+    types: [0, 0],
   });
+  const [positionType, setPositionType] = useState(0);
+  const [typeName, setTypeName] = useState({ 0: "ninguno", 1: "ninguno" });
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllTypesPokemon());
@@ -26,7 +29,15 @@ export const CreatePokemon = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPokemon({ ...pokemon, [name]: value });
+  };
+  const handleTypes = (id_type, name_type) => {
+    pokemon.types[positionType] = id_type;
+    setTypeName({ ...typeName, [positionType]: name_type });
     console.log(pokemon);
+  };
+  const changeTypePosition = (id_type) => {
+    setPositionType(id_type);
+    console.log(positionType);
   };
   return (
     <div id={theme}>
@@ -85,21 +96,58 @@ export const CreatePokemon = () => {
                 />
                 <input
                   type="text"
-                  name="url_image"
+                  name="url_image1"
+                  placeholder="Url Image..."
+                />
+                <input
+                  type="text"
+                  name="url_image2"
                   placeholder="Url Image..."
                 />
               </div>
               <div className="form_create_types">
-                {types !== undefined &&
-                  types.map((type) => {
-                    return (
-                      <React.Fragment key={type.id}>
-                        <div className="lbType">
-                          <label>{type.name}</label>
-                        </div>
-                      </React.Fragment>
-                    );
-                  })}
+                <div className="types_select">
+                  <div>
+                    <label
+                      name=""
+                      onClick={() => {
+                        changeTypePosition(0);
+                      }}
+                    >
+                      {typeName[0]}
+                    </label>
+                  </div>
+                  <div>
+                    <label
+                      name=""
+                      onClick={() => {
+                        changeTypePosition(1);
+                      }}
+                    >
+                      {typeName[1]}
+                    </label>
+                  </div>
+                </div>
+                <div className="form_create_types_sel">
+                  {types !== undefined &&
+                    types.map((type) => {
+                      return (
+                        <React.Fragment key={type.id}>
+                          <div className="lbType">
+                            <label
+                              onClick={() => {
+                                {
+                                  handleTypes(type.id, type.name);
+                                }
+                              }}
+                            >
+                              {type.name}
+                            </label>
+                          </div>
+                        </React.Fragment>
+                      );
+                    })}
+                </div>
               </div>
             </div>
             <div className="botones_create">
