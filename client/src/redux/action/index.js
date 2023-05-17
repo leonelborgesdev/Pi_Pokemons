@@ -6,6 +6,7 @@ import {
   GET_POKEMON_BY_ID,
   NEXT_PREVIUS,
   PAGINADO_POKEMONS,
+  CREATE_POKEMON,
 } from "./type";
 
 const api = "http://localhost:3001";
@@ -39,6 +40,20 @@ export const getAllPokemons = () => {
         type: GET_ALL_POKEMONS,
         payload: data.pokemons,
       });
+    }
+  };
+};
+export const add_pokemon = (pokemon) => {
+  return async function (dispatch) {
+    console.log("pokemon:", pokemon);
+    const response = await fetch(`${api}/pokemon`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pokemon),
+    });
+    if (response) {
+      const data = await response.json();
+      console.log("respuesta", data);
     }
   };
 };

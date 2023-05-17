@@ -3,7 +3,7 @@ import { Nav } from "../Nav/Nav";
 import { useDispatch, useSelector } from "react-redux";
 import "./CreatePokemon.css";
 import { useNavigate } from "react-router-dom";
-import { getAllTypesPokemon } from "../../redux/action";
+import { add_pokemon, getAllTypesPokemon } from "../../redux/action";
 
 export const CreatePokemon = () => {
   const { theme, types } = useSelector((state) => state);
@@ -32,13 +32,16 @@ export const CreatePokemon = () => {
     setPokemon({ ...pokemon, [name]: value });
   };
   const handleTypes = (id_type, name_type) => {
-    pokemon.types[positionType] = id_type;
+    pokemon.types[positionType] = name_type;
     setTypeName({ ...typeName, [positionType]: name_type });
     console.log(pokemon);
   };
   const changeTypePosition = (id_type) => {
     setPositionType(id_type);
     console.log(positionType);
+  };
+  const handleCreatePokemon = () => {
+    dispatch(add_pokemon(pokemon));
   };
   return (
     <div id={theme}>
@@ -152,7 +155,13 @@ export const CreatePokemon = () => {
               </div>
             </div>
             <div className="botones_create">
-              <button>Create</button>
+              <button
+                onClick={() => {
+                  handleCreatePokemon();
+                }}
+              >
+                Create
+              </button>
               <button
                 onClick={() => {
                   navigate("/pokemons");
