@@ -16,7 +16,8 @@ export const CreatePokemon = () => {
     speed: "",
     height: "",
     weight: "",
-    url_image: "",
+    sprite: "",
+    sprite2: "",
     types: [0, 0],
   });
   const [positionType, setPositionType] = useState(0);
