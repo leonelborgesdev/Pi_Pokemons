@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import "./CreatePokemon.css";
 import { useNavigate } from "react-router-dom";
 import { add_pokemon, getAllTypesPokemon } from "../../redux/action";
+import { v4 as uuid } from "uuid";
 
 export const CreatePokemon = () => {
   const { theme, types } = useSelector((state) => state);
   const [pokemon, setPokemon] = useState({
-    id: "",
+    id: uuid(),
     name: "",
     life: "",
     strength: "",
