@@ -89,8 +89,8 @@ export const CreatePokemon = () => {
                 />
                 <input
                   type="text"
-                  name="heigth"
-                  placeholder="Heigth"
+                  name="height"
+                  placeholder="Height"
                   onChange={handleChange}
                 />
                 <input
@@ -99,8 +99,18 @@ export const CreatePokemon = () => {
                   placeholder="Weight"
                   onChange={handleChange}
                 />
-                <input type="text" name="sprite" placeholder="Url Image..." />
-                <input type="text" name="sprite2" placeholder="Url Image2..." />
+                <input
+                  type="text"
+                  name="sprite"
+                  placeholder="Url Image..."
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="sprite2"
+                  placeholder="Url Image2..."
+                  onChange={handleChange}
+                />
               </div>
               <div className="form_create_types">
                 <div className="types_select">
