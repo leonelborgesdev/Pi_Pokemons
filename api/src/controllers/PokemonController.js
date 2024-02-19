@@ -113,35 +113,45 @@ async function createPokemon(req, res) {
         .status(400)
         .json({ ok: false, msg: `El pokemon ${name} ya existe` });
     }
-    const pokeAdd = await Pokemon.create({
-      id,
-      name,
-      life,
-      strength,
-      defending,
-      speed,
-      height,
-      weight,
-      sprite,
-      sprite2,
-    });
-    await pokeAdd.setTypes(typePokemon);
-    return res.status(200).json({
-      ok: true,
-      pokemon: {
-        id: pokeAdd.id,
-        name: pokeAdd.name,
-        life: pokeAdd.life,
-        strength: pokeAdd.strength,
-        defending: pokeAdd.defending,
-        speed: pokeAdd.speed,
-        height: pokeAdd.height,
-        weight: pokeAdd.weight,
-        sprite: pokeAdd.sprite,
-        sprite2: pokeAdd.sprite2,
-        types: typePokemon,
-      },
-    });
+    if (req.files?.image) {
+      const result = await uploadImage(req.files.image.tempFilePath);
+      const { public_id, secure_url } = result;
+      console.log(result);
+      console.log(public_id, secure_url);
+      await fs.unlink(req.files.image.tempFilePath);
+      const newImage = await Image.create({ id, public_id, secure_url });
+
+      return res.status(200).json({ newImage });
+    }
+    // const pokeAdd = await Pokemon.create({
+    //   id,
+    //   name,
+    //   life,
+    //   strength,
+    //   defending,
+    //   speed,
+    //   height,
+    //   weight,
+    //   sprite,
+    //   sprite2,
+    // });
+    // await pokeAdd.setTypes(typePokemon);
+    // return res.status(200).json({
+    //   ok: true,
+    //   pokemon: {
+    //     id: pokeAdd.id,
+    //     name: pokeAdd.name,
+    //     life: pokeAdd.life,
+    //     strength: pokeAdd.strength,
+    //     defending: pokeAdd.defending,
+    //     speed: pokeAdd.speed,
+    //     height: pokeAdd.height,
+    //     weight: pokeAdd.weight,
+    //     sprite: pokeAdd.sprite,
+    //     sprite2: pokeAdd.sprite2,
+    //     types: typePokemon,
+    //   },
+    // });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ ok: false, msg: error });
